@@ -2,16 +2,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>最初のぺーこ</title>
+    <title><?php echo $title; ?></title>
 
 </head>
 
 <body>
-    <?php
-    $now_time
+    <?php echo
+    $now_time;
     ?>
-<br />
-<?php $message ?>
+    <br />
+    <?php echo $message; ?>
 </body>
 
 </html>
