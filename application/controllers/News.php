@@ -1,5 +1,6 @@
 <?php
-class News extends CI_Controller {
+class News extends CI_Controller
+{
 
     public function __construct()
     {
@@ -11,20 +12,22 @@ class News extends CI_Controller {
         $this->load->helper('url_helper');
     }
 
-    public function index() {
+    public function index()
+    {
         // 登録されているデータを全件取得
         $data['news'] = $this->news_model->get_news();
 
         $data['title'] = 'News archive';
 
-
+        // 第2引数にオブジェクトとしてviewに渡す。つまり、$dataは配列出ない場合、記述不要
         $this->load->view('templates/header', $data);
         $this->load->view('news/index', $data);
         $this->load->view('templates/footer');
     }
 
     // 個々のニュースページ
-    public function view($slug = NULL) {
+    public function view($slug = NULL)
+    {
         //　指定された記事を呼び出す
         $data['news_item'] = $this->news_model->get_news($slug);
 
@@ -40,4 +43,3 @@ class News extends CI_Controller {
         $this->load->view('templates/footer');
     }
 }
-?>
