@@ -5,4 +5,4 @@
 </head>
 
 <body>
-    <h1><?php echo $title; ?></h1>
+    <h1>CodeIgniter Tutorial</h1>

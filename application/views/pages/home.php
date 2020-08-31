@@ -1,1 +1,1 @@
-<h2>こんにちはこちら、home.php</h2>
+<h1>home.php</h1>
