@@ -22,4 +22,21 @@ class News_model extends CI_Model
         // 結果を1行、配列で取得する（デフォルトは0行目）
         return $query->row_array();
     }
+
+    public function set_news()
+    {
+        // URLヘルパーをロード
+        $this->load->helper('url');
+
+        // 組み込み関数 urlencode() を使うことで、日本語等マルチバイト文字の入力にも対応する。
+        $slug = urlencode(url_title($this->input->post('title'), '-', TRUE));
+
+        $data = array(
+            'title' => $this->input->post('title'),
+            'slug' => $slug,
+            'text' => $this->input->post('text')
+        );
+
+        return $this->db->insert('news', $data)
+    }
 }
